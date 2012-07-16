@@ -27,6 +27,11 @@ module LinkedIn
         path = "#{person_path(options)}/group-memberships"
         simple_query(path, options)
       end
+
+      def group(id, options = {})
+        path = group_path(options)
+        simple_query(path, options)
+      end
       
       def shares(options={})
         path = "#{person_path(options)}/network/updates?type=SHAR&scope=self"
@@ -75,6 +80,10 @@ module LinkedIn
           else
             path += "~"
           end
+        end
+
+        def group_path(id, options)
+          path = "/groups/#{id}"
         end
 
     end
