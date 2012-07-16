@@ -29,7 +29,7 @@ module LinkedIn
       end
 
       def group(id, options = {})
-        path = group_path(options)
+        path = group_path(id, options)
         simple_query(path, options)
       end
       
