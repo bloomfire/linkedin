@@ -15,6 +15,11 @@ module LinkedIn
         put(path, body.to_json, "Content-Type" => "application/json")
       end
 
+      def group_post(group_id, fields)
+        path = "/groups/#{group_id}/posts"
+        post(path, fields.to_json, "Content-Type" => "application/json")
+      end
+
       # def share(options={})
       #   path = "/people/~/shares"
       #   defaults = { :visability => 'anyone' }
