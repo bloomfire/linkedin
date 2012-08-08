@@ -8,6 +8,11 @@ module LinkedIn
         simple_query(path, options)
       end
 
+      def email_address(options={})
+        path = "#{person_path(options)}/email-address"
+        simple_query(path, options)
+      end
+
       def connections(options={})
         path = "#{person_path(options)}/connections"
         simple_query(path, options)
